@@ -1,31 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Pokedex" class="pokedex" src="../public/pokedex.png">
+    <div class="pokedex">
+      <img alt="Pokedex" src="../public/pokedex.png">
+      <PokeMain v-bind:pokemon='pokemon'/>
+      <PokeInfo v-bind:pokemon='pokemon'/>
+      <PokeNumber v-bind:pokemon='pokemon'/>
+    </div>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import Pokedex from 'pokedex-promise-v2';
+import PokeMain from './components/PokeMain';
+import PokeInfo from './components/PokeInfo';
+import PokeNumber from './components/PokeNumber';
+
+const P = new Pokedex();
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    PokeMain,
+    PokeInfo,
+    PokeNumber
+  },
+  data() {
+    return {
+      pokemon: {}
+    }
+  },
+  created() {
+    P.resource('api/v2/pokemon/1')
+    .then(response => {
+      this.pokemon = response;
+      console.log(this.pokemon)
+    })
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  font-family: 'Ubuntu', sans-serif;
   margin-top: 60px;
 }
 
 .pokedex {
-  display: block;
+  max-width: 748px;
   margin: auto;
 }
 </style>
