@@ -2,7 +2,7 @@
   <div class="poke-number" >
     <div v-if="pokemon.id" class='poke-id'>
         <form v-on:submit.prevent="onSubmit">
-            #<input name='id' :value='pokemon.id | formatNumber' maxlength="3">
+            #<input name='id' :value='pokemon.id | formatNumber' maxlength="3" autocomplete="off">
         </form>
     </div>
   

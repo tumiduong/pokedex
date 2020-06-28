@@ -87,7 +87,71 @@ img {
 }
 
 .poison {
-  background-color: rgb(218, 187, 218);
+  background-color: rgb(224, 169, 224);
+}
+
+.fire {
+  background-color: rgb(253, 180, 95);
+}
+
+.flying {
+  background-color: rgb(221, 214, 238);
+}
+
+.water {
+  background-color: rgb(143, 223, 255);
+}
+
+.bug {
+  background-color: rgb(198, 223, 91);
+}
+
+.normal {
+  background-color: rgb(214, 209, 193);
+}
+
+.electric {
+  background-color: rgb(247, 233, 44);
+}
+
+.ground {
+  background-color: rgb(233, 212, 121);
+}
+
+.fairy {
+  background-color: rgb(255, 193, 229);
+}
+
+.fighting {
+  background-color: rgb(255, 102, 102);
+}
+
+.rock {
+  background-color: rgb(207, 181, 61);
+}
+
+.steel {
+  background-color: rgb(207, 207, 207);
+}
+
+.ice {
+  background-color: rgb(198, 239, 255);
+}
+
+.ghost {
+  background-color: rgb(186, 135, 207);
+}
+
+.psychic {
+  background-color: rgb(255, 106, 193);
+}
+
+.dark {
+  background-color: rgb(185, 172, 152);
+}
+
+.dragon {
+  background-color: rgb(154, 143, 255);
 }
 
 .poke-stats {
