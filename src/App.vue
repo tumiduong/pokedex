@@ -4,7 +4,7 @@
       <img alt="Pokedex" src="../public/pokedex.png">
       <PokeMain v-bind:pokemon='pokemon'/>
       <PokeInfo v-bind:pokemon='pokemon'/>
-      <PokeNumber v-bind:pokemon='pokemon'/>
+      <PokeNumber v-bind:pokemon='pokemon' @id-change="fetchPokemon" />
     </div>
   </div>
 </template>
@@ -35,6 +35,15 @@ export default {
       this.pokemon = response;
       console.log(this.pokemon)
     })
+  },
+  methods: {
+    fetchPokemon: function(id) {
+      P.resource(`api/v2/pokemon/${id}`)
+      .then(response => {
+        this.pokemon = response;
+        console.log(this.pokemon)
+      })
+    }
   }
 }
 </script>

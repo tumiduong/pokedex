@@ -1,7 +1,9 @@
 <template>
   <div class="poke-number" >
     <div v-if="pokemon.id" class='poke-id'>
-        #<input :value='pokemon.id | formatNumber' maxlength="3">
+        <form v-on:submit.prevent="onSubmit">
+            #<input name='id' :value='pokemon.id | formatNumber' maxlength="3">
+        </form>
     </div>
   
     <p v-else></p>
@@ -23,6 +25,13 @@ export default {
               return value;
           }
       }
+  },
+  methods: {
+      onSubmit: function(event) {
+          if (parseInt(event.target.elements.id.value) > 0 || parseInt(event.target.elements.id.value) < 808) {
+            this.$emit('id-change', parseInt(event.target.elements.id.value))
+          }   
+      }
   }
 }
 </script>
@@ -43,7 +52,7 @@ export default {
   font-size: 20px;
   position: absolute;
   top: 85%;
-  left: 12%;
+  left: 13%;
 }
 
 input {
@@ -52,7 +61,7 @@ input {
     border: none;
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
-    width: 18%;
+    width: 17%;
     margin-left: 10px;
 }
 </style>

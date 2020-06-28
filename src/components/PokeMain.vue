@@ -1,5 +1,5 @@
 <template>
-  <div class="poke-photo" >
+  <div class="poke-screen" >
     <div v-if="pokemon.sprites">
       <img :alt='pokemon.name' :src='pokemon.sprites.front_default' />
       <p class="poke-name">{{pokemon.name | capitalize}}</p>
@@ -40,7 +40,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.poke-photo {
+.poke-screen {
   width: 748px;
   height: 544px;
   position: absolute;
@@ -55,6 +55,9 @@ img {
   z-index: 1;
   background-color: rgb(236, 236, 236);
   border-radius: 50px;
+  width: 96px;
+  height: auto;
+  border: lightgray 1px solid;
 }
 
 .poke-name {
